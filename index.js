@@ -1,6 +1,6 @@
 const x_class = 'x'
 const circle_class = 'circle'
-let circleTurn;
+let circleTurn = false;
 let cells = document.querySelectorAll(".grid-items")
 cells.forEach(function(cell) {
     cell.addEventListener('click', clicked, {once : true} )
@@ -8,12 +8,19 @@ cells.forEach(function(cell) {
 function clicked (e) {
     const cell = e.target
     const currentClass = circleTurn ? circle_class : x_class
+    // let currentClass
+    // if (circleTurn) {
+    //     currentClass =  circle_class
+    // }
+    // else {
+    //     currentClass = x_class
+    // }
     placeMark(cell, currentClass)
-    swapTurns(cell)
+    swapTurns()
 }
 function placeMark(cell, currentClass) {
     cell.classList.add(currentClass)
 } 
-function swapTurns (cell) {
+function swapTurns () {
     circleTurn = !circleTurn
 }
