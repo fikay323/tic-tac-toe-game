@@ -1,9 +1,9 @@
 let cells = document.querySelectorAll(".grid-items")
-cells.style
-cells.forEach(function (and) {
-    and.addEventListener('click', ()=> {
-        and.innerText = 'x'
-        and.classList.add('x')
-    })
-}
-)
+cells.forEach(function(cell) {
+    cell.addEventListener('click', clicked, {once : true} )
+    function clicked (e) {
+            console.log ('clicked')
+            cell.innerText += 'x'
+            cell.classList.add('x')
+    }
+})
