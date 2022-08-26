@@ -2,12 +2,15 @@
     width: 60vw;
     height: 60vh;
     display: grid;
-    gap: 10px;
+    /* gap: 10px; */
     margin: 10vh auto;
     grid-template-columns: repeat(3, 1fr);
 }
 .grid-items {
     background-color: blue;
+    display: grid;
+    place-items: center;
+    font-size: xx-large;
 }
 .grid-items:nth-of-type(1) {
     border-right: medium solid black;
