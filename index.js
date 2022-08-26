@@ -3,7 +3,7 @@ const circle_class = 'circle'
 let circleTurn = false;
 let message = document.querySelector(".Winning-message")
 let name = document.querySelector(".message")
-
+let x_turn =document.querySelector('strong')
 let first = document.getElementById("one")
 let second = one.nextElementSibling
 let third = second.nextElementSibling
@@ -20,16 +20,20 @@ cells.forEach(function(cell) {
 })
 function clicked (e) {
     const cell = e.target
-    const currentClass = circleTurn ? circle_class : x_class
-    // let currentClass
-    // if (circleTurn) {
-    //     currentClass =  circle_class
-    // }
-    // else {
-    //     currentClass = x_class
-    // }
+    let currentClass
+    if (circleTurn) {
+        currentClass =  circle_class
+        x_turn.innerText= 'X'
+    }
+    else {
+        currentClass = x_class
+        x_turn.innerText= 'O'
+    }
     placeMark(cell, currentClass)
     swapTurns()
+if (first.innerText === 'X' && second.innerText === 'X' && third.innerText === 'X') {
+    ninth.innerText = 'bh'
+}
 }
 function placeMark(cell, currentClass) {
     cell.classList.add(currentClass)
@@ -37,8 +41,4 @@ function placeMark(cell, currentClass) {
 function swapTurns () {
     circleTurn = !circleTurn
 }
-
-if(cells != '') {
-    name.textContent = 'Player O Wins!'
-    message.style.display = 'fex'
-}
+// message.classList.remove('hide')
