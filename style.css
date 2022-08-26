@@ -96,3 +96,9 @@
     padding: 10px 15px;
     font-weight: 700;
 }
+.circle::after {
+    content: 'O';
+}
+.x::after {
+    content: 'X';
+}
