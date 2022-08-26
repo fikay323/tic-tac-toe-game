@@ -1,13 +1,27 @@
-.container {
-    width: 60vw;
-    height: 60vh;
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --cell-size: 100px;
+}
+.board {
+    width: 100vw;
+    height: 100vh;
     display: grid;
+    place-content: center;
+}
+.container {
+    display: grid;
+    border: thin solid black;
     /* gap: 10px; */
-    margin: 10vh auto;
+    margin:auto;
     grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
 }
 .grid-items {
-    background-color: blue;
+    width: var(--cell-size);
+    height: var(--cell-size);
     display: grid;
     place-items: center;
     font-size: xx-large;
@@ -53,4 +67,7 @@
 .grid-items:nth-of-type(9) {
     border-left: medium solid black;
     border-top: medium solid black;
+}
+.circle, .x {
+    cursor: not-allowed;
 }
