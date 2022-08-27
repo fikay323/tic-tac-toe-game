@@ -17,6 +17,9 @@ let ninth = eighth.nextElementSibling
 let cells = document.querySelectorAll(".grid-items")
 cells.forEach(function(cell) {
     cell.addEventListener('click', clicked, {once : true} )
+        cell.addEventListener('mouseover', ()=> {
+            // cell.classList.add('x-hover')
+        })
 })
 function clicked (e) {
     const cell = e.target
