@@ -1,6 +1,6 @@
 const x_class = 'x'
 const circle_class = 'circle'
-let circleTurn = false;
+let circleTurn;
 let message = document.querySelector(".Winning-message")
 let name = document.querySelector(".message")
 let x_turn =document.querySelector('strong')
@@ -17,9 +17,14 @@ let ninth = eighth.nextElementSibling
 let cells = document.querySelectorAll(".grid-items")
 cells.forEach(function(cell) {
     cell.addEventListener('click', clicked, {once : true} )
-        cell.addEventListener('mouseover', ()=> {
-            // cell.classList.add('x-hover')
-        })
+    cell.addEventListener('mouseover', ()=> {
+        if (circleTurn == true) {
+            cell.classList.add('circle-hover')
+        }
+        else {
+            cell.classList.add('x-hover')
+        }
+    })
 })
 function clicked (e) {
     const cell = e.target
