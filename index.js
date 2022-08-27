@@ -39,9 +39,7 @@ function clicked (e) {
     }
     placeMark(cell, currentClass)
     swapTurns()
-if (first.innerText === 'X' && second.innerText === 'X' && third.innerText === 'X') {
-    ninth.innerText = 'bh'
-}
+    checkWin()
 }
 function placeMark(cell, currentClass) {
     cell.classList.add(currentClass)
@@ -49,4 +47,6 @@ function placeMark(cell, currentClass) {
 function swapTurns () {
     circleTurn = !circleTurn
 }
-// message.classList.remove('hide')
+
+const boardState = Array(cells.length)
+boardState.fill(null)
