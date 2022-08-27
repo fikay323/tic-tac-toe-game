@@ -107,14 +107,6 @@
 .x::after {
     content: 'X';
 }
-.x-hover:not(.x):not(.o):hover::after{
-    content: 'X';
-    color: lightgrey;
-}
-.circle-hover:not(.x):not(.o):hover::after{
-    content: 'O';
-    color: lightgrey;
-}
 p {
     margin-bottom: 30px;
 }

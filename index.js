@@ -4,6 +4,7 @@ let circleTurn;
 let message = document.querySelector(".Winning-message")
 let name = document.querySelector(".message")
 let x_turn =document.querySelector('strong')
+let resetButton = document.querySelector('button')
 const winningCombination = [
     [0,1,2],
     [3,4,5],
@@ -27,17 +28,30 @@ const winningCombination = [
 
 
 let cells = document.querySelectorAll(".grid-items")
-cells.forEach(function(cell) {
-    cell.addEventListener('click', clicked, {once : true} )
-    cell.addEventListener('mouseover', ()=> {
-        if (circleTurn == true) {
-            cell.classList.add('circle-hover')
-        }
-        else {
-            cell.classList.add('x-hover')
-        }
+
+startgame()
+function startgame() {
+    // circleTurn = false
+    // x_turn.innerText= 'X'
+    // message.classList.add('hide')
+    // cells.forEach(cell => {
+    //     if (cell.classList.contains('x')) {
+    //         cell.classList.remove('x')
+    //     }
+    //     else if (cell.classList.contains('o')) {
+    //         cell.classList.remove('o')
+    //     }
+    // })
+    cells.forEach(function(cell) {
+        cell.removeEventListener('click', clicked)
+        circleTurn = false
+        x_turn.innerText= 'X'
+        cell.classList.remove('x')
+        cell.classList.remove('o')
+        message.classList.add('hide')
+        cell.addEventListener('click', clicked, {once : true})
     })
-})
+}
 
 function clicked (e) {
     const cell = e.target
@@ -52,12 +66,15 @@ function clicked (e) {
         x_turn.innerText= 'O'
     }
     placeMark(cell, currentClass)
-
     if (checkWin(currentClass)) {
-        console.log('winner');
         message.classList.remove('hide')
         name.innerText = `Player ${currentClass.toUpperCase()} wins`
     }
+        
+    // if (isDraw = true) {
+    //     message.classList.remove('hide')
+    //     name.innerText = `Draw`
+    // }
 
     swapTurns()
 }
@@ -67,6 +84,11 @@ function placeMark(cell, currentClass) {
 function swapTurns () {
     circleTurn = !circleTurn
 }
+// function isDraw() {
+//     return cells.every(cell => {
+//         return cell.classList.contains(x_class) || cell.classList.contains(circle_class)
+//     })
+// }
 
 function checkWin(currentClass) {
     return winningCombination.some(combination => {
@@ -75,3 +97,4 @@ function checkWin(currentClass) {
         })
     })
 }
+resetButton.addEventListener('click', startgame)
