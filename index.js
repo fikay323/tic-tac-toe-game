@@ -1,6 +1,8 @@
 const x_class = 'x'
 const circle_class = 'o'
 let circleTurn;
+let x_score = document.querySelector('.x-scores')
+let o_score = document.querySelector('.o-scores')
 let message = document.querySelector(".Winning-message")
 let name = document.querySelector(".message")
 let x_turn =document.querySelector('strong')
@@ -34,6 +36,8 @@ function startgame() {
 }
 
 function clicked (e) {
+    let clickSound = new Audio('./sounds/sounds_click.wav')
+    clickSound.play()
     const cell = e.target
     let currentClass
 
@@ -49,6 +53,7 @@ function clicked (e) {
     if (checkWin(currentClass)) {
         message.classList.remove('hide')
         name.innerText = `Player ${currentClass.toUpperCase()} wins`
+        incrementScore(currentClass)
     }
     swapTurns()
 }
@@ -68,3 +73,12 @@ function checkWin(currentClass) {
 }
 resetButton.addEventListener('click', startgame)
 resetButton2.addEventListener('click', startgame)
+
+function incrementScore(currentClass) {
+    if (currentClass == x_class) {
+        x_score.innerText = parseInt(x_score.innerText) + 1
+    }
+    else if (currentClass == circle_class) {
+        o_score.innerText = parseInt(o_score.innerText) + 1
+    }
+}
