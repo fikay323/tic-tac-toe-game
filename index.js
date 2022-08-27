@@ -4,7 +4,8 @@ let circleTurn;
 let message = document.querySelector(".Winning-message")
 let name = document.querySelector(".message")
 let x_turn =document.querySelector('strong')
-let resetButton = document.querySelector('button')
+let resetButton = document.querySelector('.btn')
+let resetButton2 = document.querySelector('.btn2')
 const winningCombination = [
     [0,1,2],
     [3,4,5],
@@ -70,12 +71,6 @@ function clicked (e) {
         message.classList.remove('hide')
         name.innerText = `Player ${currentClass.toUpperCase()} wins`
     }
-        
-    // if (isDraw = true) {
-    //     message.classList.remove('hide')
-    //     name.innerText = `Draw`
-    // }
-
     swapTurns()
 }
 function placeMark(cell, currentClass) {
@@ -84,11 +79,6 @@ function placeMark(cell, currentClass) {
 function swapTurns () {
     circleTurn = !circleTurn
 }
-// function isDraw() {
-//     return cells.every(cell => {
-//         return cell.classList.contains(x_class) || cell.classList.contains(circle_class)
-//     })
-// }
 
 function checkWin(currentClass) {
     return winningCombination.some(combination => {
@@ -98,3 +88,4 @@ function checkWin(currentClass) {
     })
 }
 resetButton.addEventListener('click', startgame)
+resetButton2.addEventListener('click', startgame)

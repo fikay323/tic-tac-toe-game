@@ -2,6 +2,7 @@
     margin: 0;
     box-sizing: border-box;
     user-select: none;
+    color: greenyellow;
 }
 :root {
     --cell-size: 100px;
@@ -10,13 +11,13 @@
     width: 100vw;
     height: 100vh;
     display: grid;
+    background-color: black;
     justify-items: center;
     align-content: center;
 }
 .container {
     display: grid;
     border: thin solid black;
-    /* gap: 10px; */
     margin:auto;
     grid-template-columns: repeat(3, 1fr);
     cursor: pointer;
@@ -29,47 +30,17 @@
     font-size: 70px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.grid-items:nth-of-type(1) {
-    border-right: medium solid black;
-    border-bottom: medium solid black;
+.border-right {
+    border-right: medium solid indigo;
 }
-.grid-items:nth-of-type(2) {
-    border-right: medium solid black;
-    border-bottom: medium solid black;
-    border-left: medium solid black;
+.border-top {
+    border-top: medium solid indigo;
 }
-.grid-items:nth-of-type(3) {
-    border-left: medium solid black;
-    border-bottom: medium solid black;
+.border-left {
+    border-left: medium solid indigo;
 }
-.grid-items:nth-of-type(4) {
-    border-right: medium solid black;
-    border-bottom: medium solid black;
-    border-top: medium solid black;
-}
-.grid-items:nth-of-type(5) {
-    border-right: medium solid black;
-    border-bottom: medium solid black;
-    border-left: medium solid black;
-    border-top: medium solid black;
-}
-.grid-items:nth-of-type(6) {
-    border-left: medium solid black;
-    border-top: medium solid black;
-    border-bottom: medium solid black;
-}
-.grid-items:nth-of-type(7) {
-    border-right: medium solid black;
-    border-top: medium solid black;
-}
-.grid-items:nth-of-type(8) {
-    border-right: medium solid black;
-    border-top: medium solid black;
-    border-left: medium solid black;
-}
-.grid-items:nth-of-type(9) {
-    border-left: medium solid black;
-    border-top: medium solid black;
+.border-bottom {
+    border-bottom: medium solid indigo;
 }
 .o, .x {
     cursor: not-allowed;
@@ -80,8 +51,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .9);
-    color: white;
+    background-color: rgb(255, 255, 255, 0.9);
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,20 +64,37 @@
 .Winning-message div {
     width: fit-content;
     font-size: 40px;
+    color: black;
+    font-weight: 900;
     margin-bottom: 20px;
 }
 .Winning-message button {
     font-size: x-large;
     padding: 10px 15px;
     width: 100px;
+    background-color: black;
+    border-radius: 10px;
     font-weight: 700;
 }
 .o::after {
     content: 'O';
+    font-size: 40px;
+    font-weight: 700;
 }
 .x::after {
     content: 'X';
+    font-size: 40px;
+    font-weight: 700;
 }
 p {
     margin-bottom: 30px;
+}
+.btn2 {
+    margin-top: 30px;
+    width: 100px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: indigo;
+    border-radius: 10px;
 }
