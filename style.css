@@ -14,6 +14,7 @@
     background-color: black;
     justify-items: center;
     align-content: center;
+    font-family: cursive;
 }
 .container {
     display: grid;
@@ -32,12 +33,6 @@
 }
 .border-right {
     border-right: medium solid indigo;
-}
-.border-top {
-    border-top: medium solid indigo;
-}
-.border-left {
-    border-left: medium solid indigo;
 }
 .border-bottom {
     border-bottom: medium solid indigo;
@@ -97,4 +92,13 @@ p {
     font-size: 20px;
     background-color: indigo;
     border-radius: 10px;
+}
+.player-x {
+    display: inline-flex;
+    padding: 10px;
+}
+.x-scores, .y-scores {
+    width: fit-content;
+    display: inline-block;
+    font-weight: 900;
 }

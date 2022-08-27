@@ -17,32 +17,11 @@ const winningCombination = [
     [2,4,6],
 ]
 
-// let first = document.getElementById("one")
-// let second = one.nextElementSibling
-// let third = second.nextElementSibling
-// let fourth = third.nextElementSibling
-// let fifth = fourth.nextElementSibling
-// let sixth = fifth.nextElementSibling
-// let seventh = sixth.nextElementSibling
-// let eighth = seventh.nextElementSibling
-// let ninth = eighth.nextElementSibling
-
 
 let cells = document.querySelectorAll(".grid-items")
 
 startgame()
 function startgame() {
-    // circleTurn = false
-    // x_turn.innerText= 'X'
-    // message.classList.add('hide')
-    // cells.forEach(cell => {
-    //     if (cell.classList.contains('x')) {
-    //         cell.classList.remove('x')
-    //     }
-    //     else if (cell.classList.contains('o')) {
-    //         cell.classList.remove('o')
-    //     }
-    // })
     cells.forEach(function(cell) {
         cell.removeEventListener('click', clicked)
         circleTurn = false
