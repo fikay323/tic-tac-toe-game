@@ -53,6 +53,8 @@ function clicked (e) {
     if (checkWin(currentClass)) {
         message.classList.remove('hide')
         name.innerText = `Player ${currentClass.toUpperCase()} wins`
+        let gameOverSound = new Audio('./sounds/sounds_game_over.wav')
+        gameOverSound.play()
         incrementScore(currentClass)
     }
     swapTurns()
