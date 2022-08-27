@@ -19,9 +19,7 @@
 .container {
     display: grid;
     border: thin solid black;
-    margin:auto;
     grid-template-columns: repeat(3, 1fr);
-    cursor: pointer;
 }
 .grid-items {
     width: var(--cell-size);
