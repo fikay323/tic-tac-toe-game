@@ -71,7 +71,7 @@
     border-left: medium solid black;
     border-top: medium solid black;
 }
-.circle, .x {
+.o, .x {
     cursor: not-allowed;
 }
 .Winning-message {
@@ -101,17 +101,17 @@
     width: 100px;
     font-weight: 700;
 }
-.circle::after {
+.o::after {
     content: 'O';
 }
 .x::after {
     content: 'X';
 }
-.x-hover:not(.x):not(.circle):hover::after{
+.x-hover:not(.x):not(.o):hover::after{
     content: 'X';
     color: lightgrey;
 }
-.circle-hover:not(.x):not(.circle):hover::after{
+.circle-hover:not(.x):not(.o):hover::after{
     content: 'O';
     color: lightgrey;
 }

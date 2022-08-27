@@ -1,5 +1,5 @@
 const x_class = 'x'
-const circle_class = 'circle'
+const circle_class = 'o'
 let circleTurn;
 let message = document.querySelector(".Winning-message")
 let name = document.querySelector(".message")
@@ -15,15 +15,15 @@ const winningCombination = [
     [2,4,6],
 ]
 
-let first = document.getElementById("one")
-let second = one.nextElementSibling
-let third = second.nextElementSibling
-let fourth = third.nextElementSibling
-let fifth = fourth.nextElementSibling
-let sixth = fifth.nextElementSibling
-let seventh = sixth.nextElementSibling
-let eighth = seventh.nextElementSibling
-let ninth = eighth.nextElementSibling
+// let first = document.getElementById("one")
+// let second = one.nextElementSibling
+// let third = second.nextElementSibling
+// let fourth = third.nextElementSibling
+// let fifth = fourth.nextElementSibling
+// let sixth = fifth.nextElementSibling
+// let seventh = sixth.nextElementSibling
+// let eighth = seventh.nextElementSibling
+// let ninth = eighth.nextElementSibling
 
 
 let cells = document.querySelectorAll(".grid-items")
@@ -56,6 +56,7 @@ function clicked (e) {
     if (checkWin(currentClass)) {
         console.log('winner');
         message.classList.remove('hide')
+        name.innerText = `Player ${currentClass.toUpperCase()} wins`
     }
 
     swapTurns()
